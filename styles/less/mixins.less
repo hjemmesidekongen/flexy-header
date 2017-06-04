@@ -1,3 +1,11 @@
 .flexy-header-mixin-row-height(@height) {
 	min-height: @height;
+
+	.flexy-navigation {
+		.flexy-navigation-mixin-height(@height);
+	}
+
+	.flexy-navigation__sidebar-toggle {
+		line-height: @height;
+	}
 }

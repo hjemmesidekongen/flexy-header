@@ -1,0 +1,204 @@
+// |--------------------------------------------------------------------------
+// | Flexy header
+// |--------------------------------------------------------------------------
+// |
+// | This file contains styles for the following:
+// | - .flexy-header
+// |
+
+// --------------------------------------------------
+// Variables
+// --------------------------------------------------
+
+@import "variables";
+
+// --------------------------------------------------
+// Mixins
+// --------------------------------------------------
+
+@import "mixins";
+
+// --------------------------------------------------
+// Styling
+// --------------------------------------------------
+
+.flexy-header {
+
+  .container,
+  .flexy-row {
+    min-height: inherit;
+  }
+}
+
+.flexy-header--static {}
+
+.flexy-header--sticky {
+  position: fixed;
+  z-index: $flexy-header-sticky-zindex;
+  top: 0;
+  width: 100%;
+
+  will-change: transform;
+  @include transition(transform 200ms linear);
+
+  &,
+  &.flexy-header--unpinned {
+    @include translateY(-100%);
+  }
+
+  &.flexy-header--pinned {
+    @include translateY(0);
+    @include box-shadow($flexy-header-sticky-unpinned-box-shadow);
+  }
+}
+
+.flexy-header__logo {
+  display: block;
+
+  img {
+
+    .flexy-header--static & {
+      height: $xs-flexy-header-static-logo-height;
+    }
+
+    .flexy-header--sticky & {
+      height: $xs-flexy-header-sticky-logo-height;
+    }
+  }
+}
+
+.flexy-header__navigation__wrapper {
+  flex-grow: 1;
+}
+
+.flexy-header__row {
+  @include transition(all .25s ease-in-out);
+
+  .flexy-header--static & {
+    background-color: $flexy-header-static-background-color;
+
+    @include flexy-header-mixin-row-height($xs-flexy-header-static-row-height);
+  }
+
+  .flexy-header--sticky & {
+    background-color: $flexy-header-sticky-background-color;
+
+    @include flexy-header-mixin-row-height($xs-flexy-header-sticky-row-height);
+  }
+}
+
+// --------------------------------------------------
+// Variants
+// --------------------------------------------------
+
+// --------------------------------------------------
+// Responsive
+// --------------------------------------------------
+
+// Mobile - and up
+@media #{$breakpoint-mobile-and-up} {}
+
+// Mobile - only
+@media #{$breakpoint-mobile-only} {}
+
+// Tablet - and up
+@media #{$breakpoint-tablet-and-up} {}
+
+// Tablet - only
+@media #{$breakpoint-tablet-only} {
+
+  .flexy-header__row {
+
+    .flexy-header--static & {
+      @include flexy-header-mixin-row-height($sm-flexy-header-static-row-height);
+    }
+
+    .flexy-header--sticky & {
+      @include flexy-header-mixin-row-height($sm-flexy-header-sticky-row-height);
+    }
+  }
+
+  .flexy-header__logo {
+
+    img {
+
+      .flexy-header--static & {
+        height: $sm-flexy-header-static-logo-height;
+      }
+
+      .flexy-header--sticky & {
+        height: $sm-flexy-header-sticky-logo-height;
+      }
+    }
+  }
+}
+
+// Desktop - and up
+@media #{$breakpoint-desktop-and-up} {}
+
+// Desktop - only
+@media #{$breakpoint-desktop-only} {
+
+  .flexy-header__row {
+
+    .flexy-header--static & {
+      @include flexy-header-mixin-row-height($md-flexy-header-static-row-height);
+    }
+
+    .flexy-header--sticky & {
+      @include flexy-header-mixin-row-height($md-flexy-header-sticky-row-height);
+    }
+  }
+
+  .flexy-header__logo {
+
+    img {
+
+      .flexy-header--static & {
+        height: $md-flexy-header-static-logo-height;
+      }
+
+      .flexy-header--sticky & {
+        height: $md-flexy-header-sticky-logo-height;
+      }
+    }
+  }
+}
+
+// Large desktop - and up
+@media #{$breakpoint-large-desktop-and-up} {
+
+  .flexy-header__row {
+
+    .flexy-header--static & {
+      @include flexy-header-mixin-row-height($lg-flexy-header-static-row-height);
+    }
+
+    .flexy-header--sticky & {
+      @include flexy-header-mixin-row-height($lg-flexy-header-sticky-row-height);
+    }
+  }
+
+  .flexy-header__logo {
+
+    img {
+
+      .flexy-header--static & {
+        height: $lg-flexy-header-static-logo-height;
+      }
+
+      .flexy-header--sticky & {
+        height: $lg-flexy-header-sticky-logo-height;
+      }
+    }
+  }
+}
+
+// Print
+@media print {}
+
+// Touch
+.touchevents {}
+
+// No touch
+.no-touchevents {}

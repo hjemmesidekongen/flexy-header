@@ -34,7 +34,7 @@
 
 .flexy-header--sticky {
 	position: fixed;
-	z-index: @zindex-navbar;
+	z-index: @flexy-header-sticky-zindex;
 	top: 0;
 	width: 100%;
 
@@ -48,7 +48,7 @@
 
 	&.flexy-header--pinned {
 		.translateY(0);
-		.box-shadow(0 2px 5px 0 rgba(0, 0, 0, .15));
+		.box-shadow(@flexy-header-sticky-unpinned-box-shadow);
 	}
 }
 
@@ -67,12 +67,16 @@
 	}
 }
 
+.flexy-header__navigation__wrapper {
+	flex-grow: 1;
+}
+
 .flexy-header__row {
 	.transition(all .25s ease-in-out);
 
 	.flexy-header--static & {
 		background-color: @flexy-header-static-background-color;
-		
+
 		.flexy-header-mixin-row-height(@xs-flexy-header-static-row-height);
 	}
 

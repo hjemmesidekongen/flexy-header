@@ -19,7 +19,7 @@ var flexy_header = (function ($) {
                 upward: 20,
                 downward: 10
             },
-            offset: get_offset_from_elements_bottom($header_static),
+            offset: _get_offset_from_elements_bottom($header_static),
             classes: {
                 pinned: "flexy-header--pinned",
                 unpinned: "flexy-header--unpinned"
@@ -56,7 +56,6 @@ var flexy_header = (function ($) {
      * Register event handlers
      */
     function registerEventHandlers() {
-
         $(window).scroll(function(event) {
             was_scrolled = true;
         });
@@ -65,18 +64,18 @@ var flexy_header = (function ($) {
     /**
      * Get offset from element bottom
      */
-    function get_offset_from_elements_bottom($element) {
-        var elementHeight = $element.outerHeight(true),
-            elementOffset = $element.offset().top;
+    function _get_offset_from_elements_bottom($element) {
+        var element_height = $element.outerHeight(true),
+            element_offset = $element.offset().top;
 
-        return (elementHeight + elementOffset);
+        return (element_height + element_offset);
     }
 
     /**
      * Document was scrolled
      */
     function document_was_scrolled() {
-        var current_distance_from_top = $(this).scrollTop();
+        var current_distance_from_top = $(window).scrollTop();
 
         // If past offset
         if (current_distance_from_top >= options.offset) {
