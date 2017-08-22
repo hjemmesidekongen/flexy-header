@@ -3,7 +3,7 @@ $flexy-header-static-background-color: $body-bg;
 
 // Sticky
 $flexy-header-sticky-zindex: $zindex-navbar;
-$flexy-header-sticky-background-color: fade($body-bg, 95%);
+$flexy-header-sticky-background-color: rgba($body-bg, .95);
 $flexy-header-sticky-unpinned-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .15);
 
 // Responsive (static)
