@@ -7,6 +7,7 @@
 // | Morten Nissen
 // | hjemmesidekongen.dk
 // |
+
 var flexy_header = (function ($) {
     'use strict';
 
@@ -84,7 +85,7 @@ var flexy_header = (function ($) {
             if (current_distance_from_top > last_distance_from_top) {
 
                 // Obey the downward tolerance
-                if(Math.abs(current_distance_from_top - last_distance_from_top) <= options.tolerance.downward) {
+                if (Math.abs(current_distance_from_top - last_distance_from_top) <= options.tolerance.downward) {
                     return;
                 }
 
@@ -95,7 +96,7 @@ var flexy_header = (function ($) {
             else {
 
                 // Obey the upward tolerance
-                if(Math.abs(current_distance_from_top - last_distance_from_top) <= options.tolerance.upward) {
+                if (Math.abs(current_distance_from_top - last_distance_from_top) <= options.tolerance.upward) {
                     return;
                 }
 
