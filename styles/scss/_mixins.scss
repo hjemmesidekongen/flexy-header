@@ -1,5 +1,5 @@
 @mixin flexy-header-mixin-row-height($height) {
-  min-height: $height;
+  height: $height;
 
   .flexy-navigation {
     @include flexy-navigation-mixin-height($height);
