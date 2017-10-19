@@ -1,11 +1,5 @@
 @mixin flexy-header-mixin-row-height($height) {
   height: $height;
 
-  .flexy-navigation {
-    @include flexy-navigation-mixin-height($height);
-  }
-
-  .flexy-navigation__sidebar-toggle {
-    line-height: $height;
-  }
+  @include flexy-navigation-mixin-height($height);
 }
